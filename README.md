@@ -3,24 +3,24 @@ Desafio "Clean Arch" do curso Go Expert, da Full Cycle
 
 
 # Como executar o código?
-Após baixar o repositório, será necessario subir o container do docker com o comando  `docker-compose up`, dessa forma o banco de dados e a tabela será criada.
+Após baixar o repositório, será necessário subir o container do docker com o comando  `docker-compose up`. Dessa forma, o banco de dados e a tabela serão criados.
 
-Para executar o servidor basta acessar a pasta server em um terminal (~/desafio-clean-arch/cmd/ordersystem) e executar o comando:
+Para executar o servidor, basta acessar a pasta ordersystem em um terminal (~/desafio-clean-arch/cmd/ordersystem) e executar o comando:
 
 `go run main.go wire_gen.go`
 
 Nesse projeto estamos utilizando o [wire](https://github.com/google/wire) para injeção de dependencias.
 
-Essas são as respectivas portas dos serviços:
-Servidor REST http://localhost:8000/.
-Servidor gRPC http://localhost:50051/.
-Servidor GraphQL http://localhost:8080/.
+As portas dos serviços são as seguintes:
+- Servidor REST http://localhost:8000/.
+- Servidor gRPC http://localhost:50051/.
+- Servidor GraphQL http://localhost:8080/.
 
-Nesse projeto é possivel realizar as seguintes operações:
+Nesse projeto, é possível realizar as seguintes operações:
 - Criar uma ordem
 - Buscar todas as ordens
 
-### Para fazer as requisições para o servidor REST:
+### Para fazer as requisições ao servidor REST:
 
 ```bash
 curl --location --request GET 'http://localhost:8000/order' \
@@ -35,15 +35,15 @@ curl --location --request GET 'http://localhost:8000/order' \
 curl --location 'http://localhost:8000/orders'
 ```
 
-###  Para fazer as requisições para o servidor gRPC:
-É possivel interagir com o serviço via CLI, para isso será necessario baixar o [evans](https://github.com/ktr0731/evans?tab=readme-ov-file) e executar o comando:
+###  Para fazer as requisições ao servidor gRPC:
+É possível interagir com o serviço via CLI. Para isso, será necessário baixar o [evans](https://github.com/ktr0731/evans?tab=readme-ov-file) e executar o comando:
 
 `evans -r repl`
 
-Após isso será possivel interagir com o serviço via CLI.
+Após isso, será possível interagir com o serviço via CLI.
 
-### Para fazer as requisições para o servidor GraphQL:
-Será necessario instalar o [Gqlgen](https://gqlgen.com/) e acessar a url http://localhost:8080 e executar as queries.
+### Para fazer as requisições ao servidor GraphQL:
+Será necessário instalar o [Gqlgen](https://gqlgen.com/) e acessar a url http://localhost:8080 e executar as queries.
 
 ```bash
 mutation createOrder {
